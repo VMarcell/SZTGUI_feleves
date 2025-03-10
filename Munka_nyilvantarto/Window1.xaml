@@ -1,0 +1,37 @@
+﻿<Window x:Class="Munka_nyilvantarto.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Munka_nyilvantarto"
+        mc:Ignorable="d"
+        Title="Window1" Height="378" Width="647">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="41*" />
+            <!-- Bal oldali statisztikák -->
+            <ColumnDefinition Width="39*" />
+            <!-- Jobb oldali táblázat és CheckBox-ok -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Bal oldali statisztikák -->
+        <StackPanel Grid.Column="0" Margin="10,10,10,10">
+            <TextBlock Text="Átlagos napok kezdés és befejezés között:" Margin="5" x:Name="KezdesBefejezesStat" />
+            <TextBlock Text="Átlagos napok számlázás és befejezés között:" Margin="5" x:Name="SzamlazasBefejezesStat" />
+            <TextBlock Text="Munkatípusok száma:" Margin="5" />
+            <StackPanel x:Name="MunkatipusStat" Margin="5" />
+
+            <TextBlock Text="Legaktívabb megrendelők:" Margin="5" />
+            <StackPanel x:Name="TopClientsStat" Margin="5" />
+        </StackPanel>
+
+        <!-- Jobb oldali táblázat és CheckBox-ok -->
+        <StackPanel Grid.Column="1" Margin="10,10,10,10">
+            <CheckBox Content="MVT" Margin="5" x:Name="MvtCheckBox" />
+            <CheckBox Content="EVT" Margin="5" x:Name="EvtCheckBox" />
+            <CheckBox Content="Mindegyik" Margin="5" x:Name="AllCheckBox" IsChecked="True" />
+
+            <DataGrid x:Name="StatDataGrid" Margin="10" AutoGenerateColumns="True" />
+        </StackPanel>
+    </Grid>
+</Window>
